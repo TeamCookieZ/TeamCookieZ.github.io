@@ -1,8 +1,7 @@
 ---
-title: About
+title: About Us
 
 # The About page
-# v2.0
 # https://github.com/TeamCookieZ/TeamCookieZ.github.io
 # © 2020 TeamCookieZ
 # MIT License
@@ -13,13 +12,13 @@ title: About
 ### 🌏 **Located in Singapore**
 
 ## We do
-> CTF Writeups
-> Blogs
-> Interesting IT/Cybersecurity Topic
+#### > CTF Writeups
+#### > Blogs
+#### > Interesting IT/Cybersecurity Topic
 
 ## Team
-> Kai Xian (AxiaMil)
-> Jason (ColdSpotYZ)
-> Zi Bin (ShallowDream)
+#### > Kai Xian (AxiaMil) 
+#### > Jason (ColdSpotYZ)
+#### > Zi Bin (ShallowDream)
 
 
