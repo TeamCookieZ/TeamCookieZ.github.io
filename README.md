@@ -12,15 +12,15 @@
 
 ## Website (https://teamcookiez.github.io/)
 
-### CTF Writeups
-### Blogs
-### Interesting IT/Cybersecurity Topic
+#### * CTF Writeups
+#### * Blogs
+#### * Interesting IT/Cybersecurity Topic
 
 ## Team
 
-### Kai Xian (AxiaMil)
-### Jason (ColdSpotYZ)
-### Zi Bin (ShallowDream)
+#### Kai Xian (AxiaMil)
+#### Jason (ColdSpotYZ)
+#### Zi Bin (ShallowDream)
 
 
 
