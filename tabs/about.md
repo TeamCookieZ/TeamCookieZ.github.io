@@ -13,13 +13,16 @@ title: About Us
 #### CookieZ is a small team interested in anything cybersecurity related, we participate in CTF competition to hone our skills while maintaining a blog to update and refresh our knowledge
 
 ## **We do**
-##### >>> CTF Writeups
-##### >>> Blogs
+##### >> CTF Writeups
+##### >> Blogs
 ##### >>> Interesting IT/Cybersecurity Topic
 
 ## **Team**
-##### >>> Kai Xian (AxiaMil) 
-##### >>> Jason (ColdSpotYZ)
-##### >>> Zi Bin (ShallowDream)
+##### >> Kai Xian 
+(<a href="https://axiamil.me/">AxiaMil</a>)
+##### >> Jason 
+(<a href="http://coldspot.me/"></a>ColdSpotYZ)
+##### >> Zi Bin 
+(<a href="https://asaiyu.me/"></a>ShallowDream)
 
 
