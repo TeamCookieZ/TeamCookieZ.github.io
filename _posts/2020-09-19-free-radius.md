@@ -17,7 +17,7 @@ Usually the RADIUS client is a NAS while the RADIUS server is a WIndows NT or UN
 It can be used in both Unix and Windows system to ensure AAA (Authentication, Authorization & Accounting).
 
 It can be used in a home network (NAS) to ensure authentication when accessing the NAS.
-![upload-image](/assets/img/sample/RADIUS-Server.gif)
+![upload-image](/assets/img/sample/free-radius/RADIUS-Server.gif)
 
 ## How does it work?
 1. User sends a form of authentication to the RADIUS Client
@@ -73,11 +73,12 @@ firstly, edit the `raddb/mods-config/file/authorize` and add the following line 
 ```
 testing Cleartext-Password := "password"
 ```
-![upload-image](/assets/img/sample/added-testing-code.png)
+
+![upload-image](/assets/img/sample/free-radius/added-testing-code.png)
 ```
 $radtest testing password 127.0.0.1 0 testing123
 ```
-![upload-image](/assets/img/sample/radtest-testing-successful.png)
+![upload-image](/assets/img/sample/free-radius/radtest-testing-successful.png)
 
 
 4. Adding clients
