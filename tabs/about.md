@@ -22,7 +22,7 @@ title: About Us
 (<a href="https://axiamil.me/">AxiaMil</a>)
 ##### >> Jason 
 (<a href="http://coldspot.me/">ColdSpotYZ</a>)
-##### >> Zi Bin 
+##### >> Zibin 
 (<a href="https://asaiyu.me/">ShallowDream</a>)
 
 
