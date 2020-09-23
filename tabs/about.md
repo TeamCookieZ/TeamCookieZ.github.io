@@ -21,8 +21,8 @@ title: About Us
 ##### >> Kai Xian 
 (<a href="https://axiamil.me/">AxiaMil</a>)
 ##### >> Jason 
-(<a href="http://coldspot.me/"></a>ColdSpotYZ)
-##### >> Zi Bin 
-(<a href="https://asaiyu.me/"></a>ShallowDream)
+(<a href="http://coldspot.me/">ColdSpotYZ</a>)
+##### >> Zibin 
+(<a href="https://asaiyu.me/">ShallowDream</a>)
 
 
