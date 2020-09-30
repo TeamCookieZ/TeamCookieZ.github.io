@@ -11,7 +11,7 @@ A [domain Name System (DNS)](https://en.wikipedia.org/wiki/Domain_Name_System) s
 [Berkeley Internet Name Domain (BIND)](https://en.wikipedia.org/wiki/BIND) is the most popular software of the implementation of DNS
 server. It was developed in the 1980s at the University of Berkley. 
 
-Bind9 is the version 9 of the opern source BIND version.
+Bind9 is the version 9 of the open source BIND version.
 
 ### 1. Installing Bind9 
 [CentOS 7]
