@@ -2,7 +2,7 @@
 title: Free Radius 
 author: Lim Kai Xian (AxiaMil)
 date: 2020-09-24 00:34:00 +0800
-categories: [Blogging, Tutorial]
+categories: [Configurations, Tutorial]
 tags: [autentication, tech, open-source]
 toc: false
 ---
@@ -45,14 +45,14 @@ A quick, popular and easy way is with [**FreeRADIUS**](https://freeradius.org/).
 #### Setup
 **NOTE (Debian based devices would be called freeradius instead of radiusd hence switch the commands from freeradius to radiusd if it does not work)**
 
-1. Install the server
+##### 1. Install the server
 ```
 $sudo apt install freeradius
 ```
 
 Debian-based systems
 
-2. Startup the freeradius server(as root)
+##### 2. Startup the freeradius server(as root)
 ```
 $sudo freeradius -X 
 ```
@@ -62,10 +62,10 @@ $sudo freeradius -X
 ```
 $sudo lsof -i:[port]
 $sudo killall freeradius
-$sudo free radius -X
+$sudo freeradius -X
 ```
 
-3. Testing of freeradius
+##### 3. Testing of freeradius
 
 To test the freeradius, we can use the radtest commands
 
@@ -81,7 +81,7 @@ $radtest testing password 127.0.0.1 0 testing123
 ![upload-image](/assets/img/sample/free-radius/radtest-testing-successful.png)
 
 
-4. Adding clients
+##### 4. Adding clients
 To add a client edit the `clients.conf` file by adding the following content
 ```
 client new {
