@@ -224,7 +224,7 @@ More Info
 >> For new Ubuntu releases, AppArmour is installed by default so there would not be need for chrooting BIND9 unless the AppArmour is disabled explicitly.
 
 Similar Blog Posts : 
-[Median (Ubuntu](https://medium.com/@Alibaba_Cloud/how-to-setup-dns-server-using-bind9-on-ubuntu-16-04-cf3ce7f570ec)
-[itzgeek [CentOS 7]](https://www.itzgeek.com/how-tos/linux/centos-how-tos/configure-dns-bind-server-on-centos-7-rhel-7.html)
-[Wiki [Bind9]](https://wiki.debian.org/Bind9)
-[Bind9 Howto [Ubuntu Forum]](https://help.ubuntu.com/community/BIND9ServerHowto)
+>> [Median (Ubuntu](https://medium.com/@Alibaba_Cloud/how-to-setup-dns-server-using-bind9-on-ubuntu-16-04-cf3ce7f570ec)
+>> [itzgeek [CentOS 7]](https://www.itzgeek.com/how-tos/linux/centos-how-tos/configure-dns-bind-server-on-centos-7-rhel-7.html)
+>> [Wiki [Bind9]](https://wiki.debian.org/Bind9)
+>> [Bind9 Howto [Ubuntu Forum]](https://help.ubuntu.com/community/BIND9ServerHowto)
