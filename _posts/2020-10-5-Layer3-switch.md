@@ -12,4 +12,3 @@ A layer 3 switch is basically a switch with routing capabilities. It is able to 
 
 To understand the difference between a normal switch and a layer 3 switch, check out [video [youtube]](https://www.youtube.com/watch?v=Bpp2Zn6LQCY&frags=pl%2Cwn)
 
-kukujiao
