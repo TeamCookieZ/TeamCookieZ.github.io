@@ -1,5 +1,5 @@
 ---
-title: STF <You shall not pass!>
+title: STF-<You shall not pass!>
 author: Jason Chua (Coldspot)
 date: 2020-12-08 00:00:51 +0800
 categories: [CTF]
@@ -14,7 +14,8 @@ toc: true
 
 
 ## Initial Testing
-Accessing the web site at http://yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg:41011/ will lead us to a simple page shown below.
+Accessing the web site at [http://yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg:41011/](http://yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg:41011/) will lead us to a simple page shown below.
+
 ![upload-image](/assets/img/blog/STF-You-shall-not-pass!/1.png)
 
 Attempting to broadcast a message will pop up a jQuery-based on-screen-keyboard which can be found at [github](https://github.com/chriscook/on-screen-keyboard) 
@@ -25,6 +26,7 @@ Broadcasting a message will display the broadcasted text in the embedded iframe 
 ![upload-image](/assets/img/blog/STF-You-shall-not-pass!/4.png)
 
 Entering a URL into the text box for  `Add new website to hack!` will result in the server sending a GET request to the specified URL.
+
 ![upload-image](/assets/img/blog/STF-You-shall-not-pass!/5.png)
 ![upload-image](/assets/img/blog/STF-You-shall-not-pass!/6.png)
 
@@ -35,6 +37,7 @@ Entering a URL into the text box for  `Add new website to hack!` will result in 
 ![upload-image](/assets/img/blog/STF-You-shall-not-pass!/8.png)
 
 Iframes to the website can also be included in a web server on a different domain indicated by the lack of an `X-Frame-Options` header
+
 ![upload-image](/assets/img/blog/STF-You-shall-not-pass!/9.png)
 
 ## Discovering and planning of exploit
@@ -43,7 +46,7 @@ Attempting to inject JavaScript `<img/src/onerror=alert()>` in the broadcast fie
 
 The key-points derived from the error is that the `unsafe-eval` in `script-src` directive is set to `self` which only allows the use of `eval()` in the same origin as the target site.
 
-The initial plan of action is to post arbitrary JavaScript on `/broadcasts` page and enter the link of `/broadcasts` in the `Add new website to hack!` form. However, one issue is that the XSS is not stored. As such, having the server attempt a GET request on ‘/broadcasts` page will not execute said JavaScript. 
+The initial plan of action is to post arbitrary JavaScript on `/broadcasts` page and enter the link of `/broadcasts` in the `Add new website to hack!` form. However, one issue is that the XSS is not stored. As such, having the server attempt a GET request on `/broadcasts` page will not execute said JavaScript. 
 
 ![upload-image](/assets/img/blog/STF-You-shall-not-pass!/10.png)
 
@@ -58,8 +61,7 @@ After a long time searching (and missing the obvious payload), I decided on a pa
 ```javascript
 {{
     a=toString().constructor.prototype;a.charAt=a.trim;
-    $eval('a,eval(`var _=document.createElement(\'script\');
-    _.src=\'//localhost/m\';document.body.appendChild(_);`),a')
+    $eval('a,eval(`var _=document.createElement(\'script\');_.src=\'//localhost/m\';document.body.appendChild(_);`),a')
 }}
 ```
 
@@ -164,5 +166,4 @@ The total cost of the server can be seen in the picture below:
 
 
 More info 
->> Main configuration file is called radiusd.conf in the root folder of the freeradius file 
->> Listening, Proxy, Authentication configuration are in the sites-available/default file
+>> Ask me on Discord @Coldspot#7033
