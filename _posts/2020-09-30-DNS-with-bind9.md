@@ -2,8 +2,8 @@
 title: DNS Server using Bind9
 author: Lim Kai Xian (AxiaMil)
 date: 2020-09-30 21:39:00 +0800
-categories: [Configurations, Tutorial]
-tags: [tech, open-source]
+categories: [Networking]
+tags: [tech, open-source, networking]
 toc: false
 ---
 
