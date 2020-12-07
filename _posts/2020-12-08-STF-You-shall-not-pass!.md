@@ -112,7 +112,7 @@ python -m SimpleHTTPServer 80
 The following picture should be the outcome:
 ![upload-image](/assets/img/blog/STF-You-shall-not-pass!/13.png)
 
-To make sure the exploit works for the server, add an `onload` function to inject to run `postMessage(frame.outerHTML)` and change inject.src to ` http://yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg:41011/broadcasts`. 
+To make sure the exploit works for the server, add an `onload` function to inject to run `postMessage(frame.outerHTML)` and change inject.src to `http://yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg:41011/broadcasts`. 
 
 ```html
 <html>
@@ -145,7 +145,7 @@ To fix the first issue of our payload having blacklisted character(s), we must f
 
 ![upload-image](/assets/img/blog/STF-You-shall-not-pass!/15.png)
 
-As we can see, the payload contained a <space> character after iframe which was blocked in `/broadcasts/frame.js`. To circumvent this, I used a `.replace(“ “, “/”)` for the outerHTML.
+As we can see, the payload contained a " " character after iframe which was blocked in `/broadcasts/frame.js`. To circumvent this, I used a `.replace(“ “, “/”)` for the outerHTML.
 
 The second problem lies with the origin check. Recall that in `/broadcasts/frame.js`, there is a check for the `event.origin`
 
