@@ -87,6 +87,8 @@ markdown: kramdown
 
 highlighter: rouge
 
+excerpt_separator: <!--more-->
+
 kramdown:
   input: GFM
   syntax_highlighter: rouge

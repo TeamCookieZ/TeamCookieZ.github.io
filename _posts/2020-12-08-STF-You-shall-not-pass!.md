@@ -2,17 +2,18 @@
 title: STF [You shall not pass!]
 author: Jason Chua (Coldspot)
 date: 2020-12-08 00:00:51 +0800
-categories: [CTF, STF, web]
+categories: [CTF, STF]
 tags: [sandbox, tech, angular, xss]
 toc: true
 comments: true
 ---
 
+*3 SOLVES*
 
-[STACK the Flags CTF](https://ctf.tech.gov.sg/) is an online, jeopardy style Capture-the-Flag competition organised by the folks in GovTech’s Cyber Security Group (CSG).
+*DESCRIPTION*
+We discovered a web portal used by COViD as a C2 platform to send messages to his ransomware victims. They have a script that accesses and hacks the websites posted back to the server! Can you stop them?
 
-![upload-image](/assets/img/blog/STF-You-shall-not-pass!/score.png)
-
+<!--more-->
 
 # Initial Testing
 Accessing the web site at [http://yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg:41011/](http://yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg:41011/) will lead us to a simple page shown below.
