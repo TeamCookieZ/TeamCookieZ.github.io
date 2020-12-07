@@ -1,8 +1,8 @@
 ---
-title: STF-You shall not pass!
+title: STF [You shall not pass!]
 author: Jason Chua (Coldspot)
 date: 2020-12-08 00:00:51 +0800
-categories: [CTF]
+categories: [CTF, STF, web]
 tags: [sandbox, tech, angular, xss]
 toc: true
 comments: true
