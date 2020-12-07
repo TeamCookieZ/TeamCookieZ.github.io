@@ -8,16 +8,8 @@ toc: true
 ---
 
 
-[Remote Authentication Dial-In User Service](https://en.wikipedia.org/wiki/RADIUS) also known as **`RADIUS`** is a client-server networking protocol 
-used for authentication in a network. It comprises of two component for it to work which is a client and a server. The client is the device you as an
-administrators wants people to authenticate while the server would serve this authenitcation request by checking the credentials with it's database.
+[STACK the Flags CTF](https://ctf.tech.gov.sg/) is an online, jeopardy style Capture-the-Flag competition organised by the folks in GovTech’s Cyber Security Group (CSG).
 
-Usually the RADIUS client is a NAS while the RADIUS server is a WIndows NT or UNIX machine.
-
-It can be used in both Unix and Windows system to ensure AAA (Authentication, Authorization & Accounting).
-
-It can be used in a home network (NAS) to ensure authentication when accessing the NAS.
-![upload-image](/assets/img/sample/free-radius/RADIUS-Server.gif)
 
 ## Initial Testing
 Accessing the web site at http://yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg:41011/ will lead us to a simple page shown below.
