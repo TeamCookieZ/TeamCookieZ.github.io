@@ -15,7 +15,7 @@ title: About Us
 ## **We do**
 ##### >> CTF Writeups
 ##### >> Blogs
-##### >>> Interesting IT/Cybersecurity Topic
+##### >> Interesting IT/Cybersecurity Topic
 
 ## **Team**
 ##### >> Kai Xian 
