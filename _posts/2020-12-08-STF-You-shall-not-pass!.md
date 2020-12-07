@@ -10,6 +10,8 @@ toc: true
 
 [STACK the Flags CTF](https://ctf.tech.gov.sg/) is an online, jeopardy style Capture-the-Flag competition organised by the folks in GovTech’s Cyber Security Group (CSG).
 
+![upload-image](/assets/img/blog/you-shall-not-pass/score.png)
+
 
 ## Initial Testing
 Accessing the web site at http://yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg:41011/ will lead us to a simple page shown below.
