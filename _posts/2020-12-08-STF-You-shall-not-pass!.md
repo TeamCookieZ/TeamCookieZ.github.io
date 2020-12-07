@@ -105,7 +105,7 @@ Python 3+
 python -m http.server 80
 ```
 Python 2+
-```
+```bash
 python -m SimpleHTTPServer 80
 ```
 
