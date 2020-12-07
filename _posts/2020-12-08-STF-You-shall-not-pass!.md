@@ -151,7 +151,7 @@ The second problem lies with the origin check. Recall that in `/broadcasts/frame
 
 ![upload-image](/assets/img/blog/STF-You-shall-not-pass!/16.png)
 
-This Regular Expression check if `event.origin` begins with  `yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg` and will return if the check fails. As such, we need a DNS to point to our server, starting with `yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg`. (xip)[http://xip.io/] provide a free domain name that points to any IP address. The domain name we will use is ` yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg.<IPADDRESS>.xip.io`. 
+This Regular Expression check if `event.origin` begins with  `yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg` and will return if the check fails. As such, we need a DNS to point to our server, starting with `yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg`. [xip](http://xip.io/) provide a free domain name that points to any IP address. The domain name we will use is `yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg.<IPADDRESS>.xip.io`. 
 
 # Finishing up
 
