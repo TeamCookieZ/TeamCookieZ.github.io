@@ -10,32 +10,32 @@ toc: true
 
 [STACK the Flags CTF](https://ctf.tech.gov.sg/) is an online, jeopardy style Capture-the-Flag competition organised by the folks in GovTech’s Cyber Security Group (CSG).
 
-![upload-image](/assets/img/blog/you-shall-not-pass/score.png)
+![upload-image](/assets/img/blog/you-shall-not-pass!/score.png)
 
 
 ## Initial Testing
 Accessing the web site at http://yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg:41011/ will lead us to a simple page shown below.
-![upload-image](/assets/img/blog/you-shall-not-pass/1.png)
+![upload-image](/assets/img/blog/you-shall-not-pass!/1.png)
 
 Attempting to broadcast a message will pop up a jQuery-based on-screen-keyboard which can be found at [github](https://github.com/chriscook/on-screen-keyboard) 
-![upload-image](/assets/img/blog/you-shall-not-pass/2.png)
-![upload-image](/assets/img/blog/you-shall-not-pass/3.png)
+![upload-image](/assets/img/blog/you-shall-not-pass!/2.png)
+![upload-image](/assets/img/blog/you-shall-not-pass!/3.png)
 
 Broadcasting a message will display the broadcasted text in the embedded iframe which leads to `/broadcasts`.  
-![upload-image](/assets/img/blog/you-shall-not-pass/4.png)
+![upload-image](/assets/img/blog/you-shall-not-pass!/4.png)
 
 Entering a URL into the text box for  `Add new website to hack!` will result in the server sending a GET request to the specified URL.
-![upload-image](/assets/img/blog/you-shall-not-pass/5.png)
-![upload-image](/assets/img/blog/you-shall-not-pass/6.png)
+![upload-image](/assets/img/blog/you-shall-not-pass!/5.png)
+![upload-image](/assets/img/blog/you-shall-not-pass!/6.png)
 
 2 other script tag can be found. `script.js` leads to a `404 Not Found` and a copy of Angular v1.5.6 is included.
-![upload-image](/assets/img/blog/you-shall-not-pass/7.png)
+![upload-image](/assets/img/blog/you-shall-not-pass!/7.png)
 
 `/broadcasts` contains a JavaScript file called `frame.js` which will be critical in developing of the exploit.
-![upload-image](/assets/img/blog/you-shall-not-pass/8.png)
+![upload-image](/assets/img/blog/you-shall-not-pass!/8.png)
 
 Iframes to the website can also be included in a web server on a different domain indicated by the lack of an `X-Frame-Options` header
-![upload-image](/assets/img/blog/you-shall-not-pass/9.png)
+![upload-image](/assets/img/blog/you-shall-not-pass!/9.png)
 
 ## Discovering and planning of exploit
 
@@ -45,13 +45,13 @@ The key-points derived from the error is that the `unsafe-eval` in `script-src` 
 
 The initial plan of action is to post arbitrary JavaScript on `/broadcasts` page and enter the link of `/broadcasts` in the `Add new website to hack!` form. However, one issue is that the XSS is not stored. As such, having the server attempt a GET request on ‘/broadcasts` page will not execute said JavaScript. 
 
-![upload-image](/assets/img/blog/you-shall-not-pass/10.png)
+![upload-image](/assets/img/blog/you-shall-not-pass!/10.png)
 
 A solution to the above problem will be having the target server attempt a GET request to a web server that we own. Our web server will then include an iframe to the `/broadcasts` target URL and attempt to run the `postMessage()` function to send our payload to the `/broadcasts` endpoint which has a `receiveMessage()` function.
 
 The payload should consist an iframe which contains a script tag that loads the angular script as well as a completed angular sandbox escape as well as CSP-bypassed code which runs arbitrary JavaScript, which had not been completed at this stage.
 
-![upload-image](/assets/img/blog/you-shall-not-pass/11.png)
+![upload-image](/assets/img/blog/you-shall-not-pass!/11.png)
 
 After a long time searching (and missing the obvious payload), I decided on a payload shown in a GitHub repository [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/XSS%20Injection/XSS%20in%20Angular.md). 
 
@@ -90,7 +90,7 @@ To test the script locally, download the vulnerable Angular source code from the
 </script>
 ```
 The result should be something like this:
-![upload-image](/assets/img/blog/you-shall-not-pass/12.png)
+![upload-image](/assets/img/blog/you-shall-not-pass!/12.png)
 
 Assuming you have [python](https://www.python.org/) installed, run the following command in the root directory in a command prompt and open up `http://localhost` on a web browser
 
@@ -104,7 +104,7 @@ python -m SimpleHTTPServer 80
 ```
 
 The following picture should be the outcome:
-![upload-image](/assets/img/blog/you-shall-not-pass/13.png)
+![upload-image](/assets/img/blog/you-shall-not-pass!/13.png)
 
 To make sure the exploit works for the server, add an `onload` function to inject to run `postMessage(frame.outerHTML)` and change inject.src to ` http://yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg:41011/broadcasts`. 
 
@@ -129,7 +129,7 @@ To make sure the exploit works for the server, add an `onload` function to injec
 ```
 
 Hosting it locally and accessing it, you will realize that the page still did not work. No JavaScript alert ☹
-![upload-image](/assets/img/blog/you-shall-not-pass/14.png)
+![upload-image](/assets/img/blog/you-shall-not-pass!/14.png)
 
 There are 2 main reasons why this script did not work. First, the payload that was sent to the server contains blacklisted characters, and second, the URL did not pass the origin check on the server.
 
@@ -137,13 +137,13 @@ There are 2 main reasons why this script did not work. First, the payload that w
 
 To fix the first issue of our payload having blacklisted character(s), we must first identify where did the blacklisted character(s) appear. We can first check the payload that was sent with the `postMessage()` function, which was `frame.outerHTML`.
 
-![upload-image](/assets/img/blog/you-shall-not-pass/15.png)
+![upload-image](/assets/img/blog/you-shall-not-pass!/15.png)
 
 As we can see, the payload contained a <space> character after iframe which was blocked in `/broadcasts/frame.js`. To circumvent this, I used a `.replace(“ “, “/”)` for the outerHTML.
 
 The second problem lies with the origin check. Recall that in `/broadcasts/frame.js`, there is a check for the `event.origin`
 
-![upload-image](/assets/img/blog/you-shall-not-pass/16.png)
+![upload-image](/assets/img/blog/you-shall-not-pass!/16.png)
 
 This Regular Expression check if `event.origin` begins with  `yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg` and will return if the check fails. As such, we need a DNS to point to our server, starting with `yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg`. (xip)[http://xip.io/] provide a free domain name that points to any IP address. The domain name we will use is ` yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg.<IPADDRESS>.xip.io`. 
 
@@ -153,14 +153,14 @@ Finally, the payload will be changed from `a, alert(“COLDSPOT”),a` to ` a,do
 
 Entering ` yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg.<IPADDRESS>.xip.io` into `Add new website to hack` form will cause the server to request a URL on our local server with the flag as the filename. 
 
-![upload-image](/assets/img/blog/you-shall-not-pass/17.png)
+![upload-image](/assets/img/blog/you-shall-not-pass!/17.png)
 
 ## Thoughts
 
 On the CTF day itself, I did not want to mess with port forwarding as many ports from my device were open and vulnerable. As such, I used a $5/month droplet on DigitalOcean and my own domain name `coldspot.me`. 
 
 The total cost of the server can be seen in the picture below:
-![upload-image](/assets/img/blog/you-shall-not-pass/18.png)
+![upload-image](/assets/img/blog/you-shall-not-pass!/18.png)
 
 
 More info 
