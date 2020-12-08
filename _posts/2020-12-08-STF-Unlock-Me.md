@@ -230,7 +230,7 @@ print(new_request.text)
 ![upload-image](/assets/img/blog/STF-Unlock-Me/11.png)
 `flag : govtech-csg{5!gN_0F_+h3_T!m3S}`
 
-Something i found out after the i got the flag was that the server did not checked for iat (timestamp). Therefore, the can be further shorted into...
+Something i found out after i got the flag, was that the server did not checked for iat (issued at also known as timestamp). Therefore, the script can be further shorted into...
 
 ```py
 
