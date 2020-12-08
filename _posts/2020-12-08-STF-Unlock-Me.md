@@ -135,7 +135,7 @@ I was hard stuck as to why it did not work and decided to try the other vulnerab
 I went to the main website and retrieve the certificate to get the public key.
 
 `
-$ openssl s_client -connect https://play.cat2.stf-2020.alttablabs.sg/:443 > cert.pem
+$ openssl s_client -connect https://play.cat2.stf-2020.alttablabs.sg/:443 > cert.pem  
 $ openssl x509 -in cert.pem -pubkey -noout > key.pem
 `
 Using key.pem, as the new key for the HMAC encryption, I edited the script for the encryption of the public key.
