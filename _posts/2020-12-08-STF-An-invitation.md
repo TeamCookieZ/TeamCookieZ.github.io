@@ -301,7 +301,7 @@ setTimeout(function() {
 
 
 # Exploit
-* This part require some educated guessing. However, trying all possibilities (2x2x2 = 8) is also a viable option *
+* This part require some educated guessing. However, trying all possibilities (2x2x2 = 8) is also a viable option
 
 Looking at the check `location.protocol == 'file:'`, we can assume that having `file:` in the protocol is the incorrect option. As such, `x[0] = 57` should be the correct case.
 
@@ -364,4 +364,4 @@ Running this, we get `{gr33tz_w3LC0m3_2_dA_t3@m_m8}` and appending `govtech-csg`
 
 
 More info 
->> Ask me on Discord @Coldspot#7033
+> Ask me on Discord @Coldspot#7033

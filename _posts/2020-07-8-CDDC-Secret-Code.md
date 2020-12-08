@@ -239,4 +239,4 @@ CDDC20{E4syR3v3rS1ng~}
 ```
 
 More info 
->> Ask me on Discord @Coldspot#7033
+> Ask me on Discord @Coldspot#7033

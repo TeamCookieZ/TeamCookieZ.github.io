@@ -174,4 +174,4 @@ The grand total for the server cost can be seen in the picture below:
 
 
 More info 
->> Ask me on Discord @Coldspot#7033
+> Ask me on Discord @Coldspot#7033

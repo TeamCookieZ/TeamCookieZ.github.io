@@ -144,4 +144,4 @@ By patching the sleep(1000) to sleep(0) and using the "speedhack" function in ch
 
 
 More info 
->> Ask me on Discord @Coldspot#7033
+> Ask me on Discord @Coldspot#7033
