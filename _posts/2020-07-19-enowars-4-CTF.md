@@ -6,6 +6,7 @@ categories: [CTF, Enowars-4]
 tags: [ctf, tech, web]
 toc: true
 comments: true
+excerpt: Enowars Capture The Flag competiton is by a CTF-Team & Workgroup for Computer Security located in TU Berlin. It is a 2 man Attack / Defense CTF played online where teams will have to attack and defend their vulnerable Machine by firstly identifying vulnerabilities in the machine. Teams will be awarded points base on the time their service is up and submitting flags to the server. After identifying the vulnerabilities, teams will need to patch their service in order for them to gain points as their service is up while preventing other teams from exploiting their services and getting the flag. Points are deducted when other teams get flag from your vulnerable machine.
 ---
 
 

