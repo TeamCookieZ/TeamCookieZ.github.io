@@ -1,6 +1,6 @@
 ---
 title: STF [Voices in the head]
-author: Li Zibin (asaiyume)
+author: Li Zibin (ShallowDream)
 date: 2020-12-09 01:48:00 +0800
 categories: [CTF, STF]
 tags: [forensics]
