@@ -85,7 +85,7 @@ After getting `thisisnottheflag`, I thought I went down a rabbit hole set by the
 
 However it seems like this was a part of the challenge, but I had no clue on whats the next step, and so is everyone else in this CTF.
 
-Till Day 2 (~one~ ~day~ ~before~ ~the~ ~end~ ~of~ ~the~ ~CTF~), **no one** solved the challenge and people are starting to go mad.
+Till Day 2 (one day before the end of the CTF), **no one** solved the challenge and people are starting to go mad.
 
 ![upload-image](/assets/img/blog/STF-Voices-In-The-Head/8.png)
 
@@ -98,7 +98,8 @@ On Day 3 morning, an addendum was added to the challenge description, which basi
 The hint reads
 `Xiao wants to help. Will you let him help you?`
 
-![upload-image](/assets/img/blog/STF-Voices-In-The-Head/10.png) :~me?~
+![upload-image](/assets/img/blog/STF-Voices-In-The-Head/10.png)~~me?~~
+
 
 This immediately got me searching for steganography resources related to Xiao, and I ended up with a tool called Xiao Steganography.
 
