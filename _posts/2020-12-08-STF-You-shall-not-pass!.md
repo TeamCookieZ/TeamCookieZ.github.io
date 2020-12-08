@@ -6,6 +6,7 @@ categories: [CTF, STF]
 tags: [sandbox, tech, angular, xss, web]
 toc: true
 comments: true
+excerpt: We discovered a web portal used by COViD as a C2 platform to send messages to his ransomware victims. They have a script that accesses and hacks the websites posted back to the server! Can you stop them?
 ---
 
 *3 SOLVES*

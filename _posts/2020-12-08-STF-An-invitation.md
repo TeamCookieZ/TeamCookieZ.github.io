@@ -6,6 +6,7 @@ categories: [CTF, STF]
 tags: [javascript, reverse]
 toc: true
 comments: true
+excerpt: We want you to be a member of the Cyber Defense Group! Your invitation has been encoded to avoid being detected by COViD’s sensors. Decipher the invitation and join in the fight!
 ---
 
 *34 SOLVES*
