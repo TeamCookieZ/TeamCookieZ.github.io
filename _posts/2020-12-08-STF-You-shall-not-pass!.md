@@ -3,7 +3,7 @@ title: STF [You shall not pass!]
 author: Jason Chua (Coldspot)
 date: 2020-12-08 00:00:51 +0800
 categories: [CTF, STF]
-tags: [sandbox, tech, angular, xss]
+tags: [sandbox, tech, angular, xss, web]
 toc: true
 comments: true
 ---
