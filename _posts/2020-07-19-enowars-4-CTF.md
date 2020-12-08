@@ -2,7 +2,7 @@
 title: Enowars 4 CTF
 author: Lim Kai Xian (AxiaMil)
 date: 2020-07-19 00:00:00 +0800
-categories: [CTF, STF]
+categories: [CTF, Enowars-4]
 tags: [ctf, tech, web]
 toc: true
 comments: true
