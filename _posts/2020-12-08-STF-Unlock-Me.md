@@ -134,10 +134,12 @@ Throwing in the newly generated JWT i created into burpsuite and forwarding the 
 I was hard stuck as to why it did not work and decided to try the other vulnerability which is the downgrade attack. Since i was not able to get the public key from the website(http).
 I went to the main website and retrieve the certificate to get the public key.
 
-`
+```
 $ openssl s_client -connect https://play.cat2.stf-2020.alttablabs.sg/:443 > cert.pem  
+```
+```
 $ openssl x509 -in cert.pem -pubkey -noout > key.pem
-`
+```
 Using key.pem, as the new key for the HMAC encryption, I edited the script for the encryption of the public key.
 
 ```py
@@ -253,7 +255,7 @@ print(new_request.text)
 
 This challenge was pretty easy but due to me not seeing the source code properly it took me so longgggg to fix my problem.  
 
-# references
+# References
 
 [JWT attack walk through (nccgroup)](https://www.nccgroup.com/sg/about-us/newsroom-and-events/blogs/2019/january/jwt-attack-walk-through/)  
 [critical vulnerabilities in JWT libraries (Auth0)](https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/)  
