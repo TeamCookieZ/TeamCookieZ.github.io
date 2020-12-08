@@ -1,7 +1,7 @@
 ---
 title: STF [Unlock Me]
 author: Lim Kai Xian (AxiaMil)
-date: 2020-12-08 14:00:00 +0800
+date: 2020-12-08 18:51:00 +0800
 categories: [CTF, STF]
 tags: [JWT abuse, tech, cookies, web]
 toc: true
