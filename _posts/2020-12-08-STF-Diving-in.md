@@ -6,11 +6,12 @@ categories: [CTF, STF]
 tags: [misc]
 toc: true
 comments: true
+excerpt: We found some papers in the bin. Retrieve the flag!
 ---
 
 *183 SOLVES*
 
-*Description*
+*DESCRIPTION*
 
 We found some papers in the bin. Retrieve the flag!
 
