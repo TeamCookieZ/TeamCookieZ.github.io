@@ -24,7 +24,7 @@ As this was my first time trying out an actual Attack / Defense CTF we spent som
 
 From there, we were able to write a script using python to get the flag automatically and submit to the flag collecter (enowars' server). This is our python script to solve the buggy challenge, It is in nowhere perfect as it took in other values other than the flag but submitting wrong flags wont penalize us so we did not really care much (It wasted time though).
 
-```
+```py
 import requests
 import re
 import socket
