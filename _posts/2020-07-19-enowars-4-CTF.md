@@ -1,9 +1,9 @@
 ---
 title: Enowars 4 CTF
 author: Lim Kai Xian (AxiaMil)
-date: 2020-12-07 22:00:00 +0800
+date: 2020-07-19 00:00:00 +0800
 categories: [CTF, STF]
-tags: [ctf, tech]
+tags: [ctf, tech, web]
 toc: true
 comments: true
 ---
@@ -24,7 +24,7 @@ As this was my first time trying out an actual Attack / Defense CTF we spent som
 
 From there, we were able to write a script using python to get the flag automatically and submit to the flag collecter (enowars' server). This is our python script to solve the buggy challenge, It is in nowhere perfect as it took in other values other than the flag but submitting wrong flags wont penalize us so we did not really care much (It wasted time though).
 
-`
+```
 import requests
 import re
 import socket
@@ -98,7 +98,7 @@ while True:
                 print(s.recv(1024))
                 f_write.write(i + '\n')
             break
-`
+```
 
 The enowars server will check if your service is up and put in flags every round which is about every 2 minutes or so. Therefore every 2 minutes there will be new flags for each team.
 
@@ -118,6 +118,6 @@ Overall, even though we did not place high for the competition it was a good int
 
 # Resources & Challenges
 
-[Challenges/Vulnerable Services](https://github.com/enowars/enowars4-vulnbox-services)
-[Scoreboard used (Bambi Scoreboard)](https://github.com/enowars/bambi-scoreboard)
-[Infrastructure used (Bambi CTF Infrastructure)](https://github.com/enowars/bambictf)
+[Challenges/Vulnerable Services](https://github.com/enowars/enowars4-vulnbox-services  
+[Scoreboard used (Bambi Scoreboard)](https://github.com/enowars/bambi-scoreboard)  
+[Infrastructure used (Bambi CTF Infrastructure)](https://github.com/enowars/bambictf)  
