@@ -118,6 +118,6 @@ Overall, even though we did not place high for the competition it was a good int
 
 # Resources & Challenges
 
-[Challenges/Vulnerable Services](https://github.com/enowars/enowars4-vulnbox-services  
+[Challenges/Vulnerable Services](https://github.com/enowars/enowars4-vulnbox-services)  
 [Scoreboard used (Bambi Scoreboard)](https://github.com/enowars/bambi-scoreboard)  
 [Infrastructure used (Bambi CTF Infrastructure)](https://github.com/enowars/bambictf)  
