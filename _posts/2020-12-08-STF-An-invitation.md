@@ -193,7 +193,7 @@ In Google Chrome's developer console, click on `sources > invite/js` and click o
 
 Setting a breakpoint at line 53 which is the call of function the anonymous function passed as argument to `gl.KG` by clicking the number `53` and refreshing the page.
 
-* Sometimes chrome caches the error. So make sure to disable caching by checking Network > Disable cache *
+* Sometimes chrome caches the error. So make sure to disable caching by checking Network > Disable cache 
 
 
 Looking at the local variables and the return value of the function, we can see JavaScript code in a string format which we can prettify with an [online tool](https://beautifier.io/).
