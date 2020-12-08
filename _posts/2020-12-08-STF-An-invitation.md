@@ -1,7 +1,7 @@
 ---
 title: STF [An invitation]
 author: Jason Chua (Coldspot)
-date: 2020-12-08 00:00:51 +0800
+date: 2020-12-08 17:50:28 +0800
 categories: [CTF, STF]
 tags: [javascript, reverse]
 toc: true
