@@ -3,9 +3,9 @@
     "name": "TeamCookiez Blog",
     "icons": [
         {
-            "src": "/assets/img/favivons/favicon.ico",
+            "src": "/assets/img/sample/avatar.jpg",
             "type": "image/x-icon",
-            "sizes": "16x16"
+            "sizes": "32x32"
         }
     ],
     "start_url": "/",
