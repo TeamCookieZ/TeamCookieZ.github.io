@@ -1,7 +1,7 @@
 ---
 title: STF [Contact Us!]
 author: Jason Chua (Coldspot)
-date: 2020-12-08 17:50:28 +0800
+date: 2020-12-10 22:09:00 +0800
 categories: [CTF, STF]
 tags: [mobile, apk, patching]
 toc: true
