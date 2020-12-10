@@ -233,7 +233,6 @@ print(new_request.text)
 Something i found out after i got the flag, was that the server did not checked for iat (issued at also known as timestamp). Therefore, the script can be further shorted into...
 
 ```py
-
 import requests 
 import json
 import jwt, token

@@ -3,7 +3,7 @@ title: STF [Voices in the head]
 author: Li Zibin (ShallowDream)
 date: 2020-12-09 01:48:00 +0800
 categories: [CTF, STF]
-tags: [forensics]
+tags: [forensics, stego, audio]
 toc: true
 comments: true
 excerpt: We found a voice recording in one of the forensic images but we have no clue what's the voice recording about. Are you able to help?

@@ -3,11 +3,10 @@ title: STF [Who are the possible kidnappers?]
 author: Li Zibin (ShallowDream)
 date: 2020-12-10 01:48:00 +0800
 categories: [CTF, STF]
-tags: [OSINT]
+tags: [OSINT, twitter]
 toc: true
 comments: true
 excerpt: Perform OSINT to gather information on the organisation’s online presence. Start by identifying a related employee and obtain more information. Information are often posted online to build the organization's or the individual's online presence (i.e. blog post). Flag format is the name of the employee and the credentials, separated by an underscore. For example, the name is Tina Lee and the credentials is MyPassword is s3cure. The flag will be govtech-csg{TinaLee_MyPassword is s3cure}
-
 ---
 
 *16 SOLVES*
