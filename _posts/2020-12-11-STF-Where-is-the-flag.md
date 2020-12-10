@@ -17,7 +17,7 @@ There's plenty of space to hide flags in our spacious office. Let's see if you c
 
 ![upload-image](/assets/img/blog/STF-Where-is-the-flag/1.png)
 
-![misc-challenge-7.png](https://github.com/TeamCookieZ/Stack-the-Flag/blob/main/Miscellaneous/Where%27s%20the%20flag/misc-challenge-7.png)
+![misc-challenge-7.png](https://github.com/TeamCookieZ/Stack-the-Flag/blob/main/Miscellaneous/Where%27s%20the%20flag/misc-challenge-7.png?raw=true)
 
 Downloading the file from the challenge i was presented with a png file.  
 I firstly check if it is really a png file using the command `file`
