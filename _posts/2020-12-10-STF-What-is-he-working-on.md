@@ -1,9 +1,9 @@
 ---
 title: STF [What is he working on? Some high value project?]
 author: Li Zibin (ShallowDream)
-date: 2020-12-09 01:48:00 +0800
+date: 2020-12-10 01:48:00 +0800
 categories: [CTF, STF]
-tags: [forensics]
+tags: [OSINT]
 toc: true
 comments: true
 excerpt: The lead Smart Nation engineer is missing! He has not responded to our calls for 3 days and is suspected to be kidnapped! Can you find out some of the projects he has been working on? Perhaps this will give us some insights on why he was kidnapped…maybe some high-value projects! This is one of the latest work, maybe it serves as a good starting point to start hunting.
@@ -11,7 +11,7 @@ excerpt: The lead Smart Nation engineer is missing! He has not responded to our 
 Flag is the repository name!
 ---
 
-*40 SOLVES*
+*103 SOLVES*
 
 *Description*
 
