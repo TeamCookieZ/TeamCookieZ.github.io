@@ -27,7 +27,7 @@ Looks like Korovax has exposed some development comment lines accidentally. Can 
 
 # Contact Us!
 
-[input-img](/assets/img/blog/STF-Contact-us/1.jpg)
+![input-img](/assets/img/blog/STF-Contact-us/1.jpg)
 
 Using jadx, the decompiled code for the contact us form is as shown:
 
@@ -70,7 +70,7 @@ Next, to run the apk, we need to sign the apk. By running `keytool -genkey -v -k
 
 After doing so and running the application, and entering `abracadabra`, the application will show the flag.
 
-[flag1-img](/assets/img/blog/STF-Contact-us/2.jpg)
+![flag1-img](/assets/img/blog/STF-Contact-us/2.jpg)
 
 Decompiling the apk with apktool, we will find a `libnative-lib.so` file in `mobile-challenge/lib/x86_64` directory.
 
@@ -78,7 +78,7 @@ Disassembling the shared object with tools like IDA or Ghidra, we can see a func
 
 Sending `Give me the flag` will also trigger the application to show the flag.
 
-[flag2-img](/assets/img/blog/STF-Contact-us/3.jpg)
+![flag2-img](/assets/img/blog/STF-Contact-us/3.jpg)
 
 
 
