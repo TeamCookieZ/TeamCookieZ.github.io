@@ -1,7 +1,7 @@
 ---
 title: STF [What is he working on? Some high value project?]
 author: Li Zibin (ShallowDream)
-date: 2020-12-09 01:48:00 +0800
+date: 2020-12-10 01:48:00 +0800
 categories: [CTF, STF]
 tags: [OSINT]
 toc: true
