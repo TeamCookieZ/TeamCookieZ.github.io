@@ -57,7 +57,7 @@ This is a snip of the spectrogram from the challenge file using Sonic Visualizer
 
 # Diving into spectrogram
 
-It looks like there are words written onto the spectrogram, but before that let us fix the view by pressing *F* to zoom to fit (~no~ ~memes~ ~intented~), so we can see the words clearly.
+It looks like there are words written onto the spectrogram, but before that let us fix the view by pressing *F* to zoom to fit (~~no memes intented~~), so we can see the words clearly.
 
 ![upload-image](/assets/img/blog/STF-Voices-In-The-Head/4.png)
 
@@ -122,11 +122,21 @@ Since it is document file, I pulled the zip file back into my Kali Linux and ran
 
 ![upload-image](/assets/img/blog/STF-Voices-In-The-Head/15.png)
 
-`Flag: govtech-csg{Thisisn0ty3tthefl@g}`
+`Flag: govtech-csg{Th1sisn0ty3tthefl@g}`
+
+But wait... Theres a catch. The flag did not submit!
+
+I then tried to use the **fake flag** above as the password for the zip file, and it successfully extracted.
+
+![upload-image](/assets/img/blog/STF-Voices-In-The-Head/16.png)
+
+![upload-image](/assets/img/blog/STF-Voices-In-The-Head/17.png)
+
+The final (not fake) flag is `govtech-csg{3uph0n1ou5_@ud10_ch@ll3ng3}`
 
 # Thoughts
 
 It was a very fustrating challenge when I was stuck after decoding `thisisnottheflag`. Tried everything like changing file headers, binwalk, steghide, but none of them seems to work. Everything went smooth sailing only after the free hint was given out on Day 3.
 
 
-~PS.~ ~~Apparently Xiao Steganography was hinted in the challenge title, Xiao being the [Singlish equivalent](http://www.singlish.net/siao/) of being **crazy**, which hence suggesting having Voices in the Head.~~
+~~Apparently Xiao Steganography was hinted in the challenge title, Xiao being the [Singlish equivalent](http://www.singlish.net/siao/) of being **crazy**, which hence suggesting having Voices in the Head.~~
