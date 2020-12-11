@@ -3,7 +3,7 @@ title: STF [Can you trick OrgX into giving away their credentials?]
 author: Li Zibin (ShallowDream)
 date: 2020-12-10 01:48:00 +0800
 categories: [CTF, STF]
-tags: [Social Engineering]
+tags: [Social Engineering, email, sitemap]
 toc: true
 comments: true
 excerpt: With the information gathered, figure out who has access to the key and contact the person.
