@@ -6,9 +6,7 @@ categories: [CTF, STF]
 tags: [OSINT]
 toc: true
 comments: true
-excerpt: The lead Smart Nation engineer is missing! He has not responded to our calls for 3 days and is suspected to be kidnapped! Can you find out some of the projects he has been working on? Perhaps this will give us some insights on why he was kidnapped…maybe some high-value projects! This is one of the latest work, maybe it serves as a good starting point to start hunting.
-
-Flag is the repository name!
+excerpt: The lead Smart Nation engineer is missing! He has not responded to our calls for 3 days and is suspected to be kidnapped! Can you find out some of the projects he has been working on? Perhaps this will give us some insights on why he was kidnapped…maybe some high-value projects! This is one of the latest work, maybe it serves as a good starting point to start hunting. Flag is the repository name!
 ---
 
 *103 SOLVES*
