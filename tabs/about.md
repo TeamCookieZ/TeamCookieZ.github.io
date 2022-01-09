@@ -24,5 +24,6 @@ title: About Us
 (<a href="http://coldspot.me/">ColdSpotYZ</a>)
 ##### >> Zibin 
 (<a href="https://asaiyu.me/">ShallowDream</a>)
-
+##### >> Arvin Lum
+(<a href="https://akari-light.github.io/Online-Portfolio-Website/">Akari</a>)
 
